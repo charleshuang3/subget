@@ -25,7 +25,7 @@ require (
 	github.com/charmbracelet/huh v0.7.0
 	github.com/charmbracelet/huh/spinner v0.0.0-20250213143221-71c9d72e6770
 	github.com/charmbracelet/lipgloss v1.1.0 // indirect
-	github.com/charmbracelet/log v0.4.1
+	github.com/charmbracelet/log v0.4.2
 	github.com/charmbracelet/x/ansi v0.8.0 // indirect
 	github.com/charmbracelet/x/exp/strings v0.0.0-20250213125511-a0c32e22e4fc // indirect
 	github.com/charmbracelet/x/term v0.2.1 // indirect
