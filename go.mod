@@ -1,6 +1,6 @@
 module github.com/charleshuang3/subget
 
-go 1.23.5
+go 1.24.0
 
 toolchain go1.24.1
 
@@ -44,7 +44,7 @@ require (
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/exp v0.0.0-20250215185904-eff6e970281f // indirect
 	golang.org/x/net v0.42.0
-	golang.org/x/sync v0.16.0 // indirect
+	golang.org/x/sync v0.17.0 // indirect
 	golang.org/x/sys v0.34.0 // indirect
-	golang.org/x/text v0.27.0
+	golang.org/x/text v0.29.0
 )
