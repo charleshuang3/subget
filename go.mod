@@ -4,7 +4,7 @@ go 1.24.0
 
 toolchain go1.24.1
 
-require github.com/PuerkitoBio/goquery v1.10.3
+require github.com/PuerkitoBio/goquery v1.11.0
 
 require (
 	github.com/charmbracelet/colorprofile v0.2.3-0.20250311203215-f60798e515dc // indirect
