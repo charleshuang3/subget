@@ -1,10 +1,8 @@
 module github.com/charleshuang3/subget
 
-go 1.24.0
+go 1.25.0
 
-toolchain go1.24.1
-
-require github.com/PuerkitoBio/goquery v1.11.0
+require github.com/PuerkitoBio/goquery v1.12.0
 
 require (
 	github.com/charmbracelet/colorprofile v0.2.3-0.20250311203215-f60798e515dc // indirect
@@ -43,8 +41,8 @@ require (
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/stretchr/testify v1.11.1
 	golang.org/x/exp v0.0.0-20250215185904-eff6e970281f // indirect
-	golang.org/x/net v0.48.0
-	golang.org/x/sync v0.19.0 // indirect
-	golang.org/x/sys v0.39.0 // indirect
-	golang.org/x/text v0.32.0
+	golang.org/x/net v0.52.0
+	golang.org/x/sync v0.20.0 // indirect
+	golang.org/x/sys v0.42.0 // indirect
+	golang.org/x/text v0.35.0
 )
