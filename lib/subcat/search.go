@@ -13,6 +13,7 @@ import (
 type SearchResult struct {
 	Title     string
 	Path      string
+	Size      string
 	Downloads int
 }
 
@@ -39,17 +40,21 @@ func Search(keyword string) []SearchResult {
 		// path maybe urlencoded
 
 		for i, n := range s.Find("td").EachIter() {
+			text := strings.TrimSpace(n.Text())
 			switch i {
 			case 0:
-				it.Title = n.Text()
+				it.Title = text
 			case 2:
-				text := n.Text()
-				parts := strings.Split(text, " ")
-				downloads, err := strconv.Atoi(parts[0])
-				if err != nil {
-					log.Fatalf("2nd td is %s", text)
+				it.Size = strings.TrimPrefix(text, "SIZE")
+			case 3:
+				parts := strings.Fields(text)
+				if len(parts) > 0 {
+					downloads, err := strconv.Atoi(parts[0])
+					if err != nil {
+						log.Warnf("failed to parse downloads from %q: %v", text, err)
+					}
+					it.Downloads = downloads
 				}
-				it.Downloads = downloads
 			}
 		}
 		res = append(res, it)

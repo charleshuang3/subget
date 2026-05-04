@@ -40,7 +40,7 @@ func main() {
 	sr := selectResult(searchResult)
 	subPath := openDownloadPage(sr.Path)
 	content := downloadSub(subPath)
-	name := renameSub(subPath)
+	name := renameSub(keyword, subPath)
 	writeSubToFile(name, content)
 	fmt.Printf("sub file is saved: %s", name)
 }
@@ -152,12 +152,11 @@ func downloadSub(path string) []byte {
 	return sub
 }
 
-func renameSub(subPath string) string {
+func renameSub(keyword string, subPath string) string {
 	_, fn := filepath.Split(subPath)
 
 	ext := filepath.Ext(fn)
-	name := fn[:len(fn)-len(ext)]
-	n := name + "." + *vidLang + ext
+	n := keyword + "." + *vidLang + ext
 
 	err := huh.NewInput().
 		Title("Enter file name").
@@ -167,8 +166,8 @@ func renameSub(subPath string) string {
 	if err != nil {
 		log.Fatalf("Error getting input: %v", err)
 	}
-	if name == "" {
-		log.Fatal("Search file name be empty.")
+	if n == "" {
+		log.Fatal("File name cannot be empty.")
 	}
 
 	return n
